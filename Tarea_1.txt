@@ -1,1 +1,2 @@
 Tarea
+sumar en python sin usar el *
