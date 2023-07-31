@@ -5,12 +5,18 @@ sumarle a dos enteros su valor maximo como int (en mi caso 64 bits)
 import sys
 
 max_valor_entero = sys.maxsize
-
+max_valor_decimal = sys.float_info.max
 
 entero1 = max_valor_entero + 1
 entero2 = max_valor_entero + 2
 
+decimal1 = max_valor_decimal + 0.1
+decimal2 = max_valor_decimal + 0.2
 
 print(f"Maximo valor entero: {max_valor_entero}")
 print(f"Resultado de entero1 + 1: {entero1}")
 print(f"Resultado de entero2 + 2: {entero2}")
+
+print(f"Maximo valor decimal: {max_valor_decimal}")
+print(f"Resultado de decimal1 + 0.1: {decimal1}")
+print(f"Resultado de decimal2 + 0.2: {decimal2}")
