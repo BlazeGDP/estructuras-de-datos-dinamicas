@@ -1,2 +1,15 @@
 Tarea
-sumar en python sin usar el *
+sumar en python sin usar el *:
+
+
+def multiplicar(numero1: int, numero2: int):
+    resultado = 0
+    for x in range(numero2):
+        resultado += numero1
+    return resultado
+
+
+numero1 = int(input("Digite su primer numero: "))
+numero2 = int(input("Digite su segundo numero: "))
+resultado_multiplicacion = multiplicar(numero1, numero2)
+print(f"el resultado de multiplicar {numero1} por {numero2}, es: {resultado_multiplicacion}")
