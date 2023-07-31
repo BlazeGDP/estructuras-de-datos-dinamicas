@@ -1,0 +1,16 @@
+tarea 02
+sumarle a dos enteros su valor maximo como int (en mi caso 64 bits)
+
+
+import sys
+
+max_valor_entero = sys.maxsize
+
+
+entero1 = max_valor_entero + 1
+entero2 = max_valor_entero + 2
+
+
+print(f"Maximo valor entero: {max_valor_entero}")
+print(f"Resultado de entero1 + 1: {entero1}")
+print(f"Resultado de entero2 + 2: {entero2}")
