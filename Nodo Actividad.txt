@@ -1,0 +1,86 @@
+using System;
+
+class Node
+{
+    public int Value;
+    public Node? Next;
+
+    public Node(int value)
+    {
+        Value = value;
+        Next = null;
+    }
+
+    public static Node AddNodeToList(Node list, Node newNode)
+    {
+        if (list == null)
+        {
+            return newNode;
+        }
+
+        if (newNode.Value == list.Value)
+        {
+            Console.WriteLine("No se puede agregar el elemento, ya se encuentra en los nodos");
+            return list;
+        }
+
+        if (newNode.Value < list.Value)
+        {
+            newNode.Next = list;
+            return newNode;
+        }
+
+        Node current = list;
+        while (current.Next != null && newNode.Value > current.Next.Value)
+        {
+            current = current.Next;
+        }
+
+        newNode.Next = current.Next;
+        current.Next = newNode;
+
+        return list;
+    }
+}
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        Node list = null;
+
+        while (true)
+        {
+            Console.Write("Ingrese un número (o 'q' para salir): ");
+            string input = Console.ReadLine();
+
+            if (input.ToLower() == "q")
+            {
+                break;
+            }
+
+            if (int.TryParse(input, out int value))
+            {
+                Node newNode = new Node(value);
+                list = Node.AddNodeToList(list, newNode);
+                PrintList(list);
+            }
+            else
+            {
+                Console.WriteLine("Entrada no válida. Ingrese un número válido o 'q' para salir.");
+            }
+        }
+    }
+
+    static void PrintList(Node list)
+    {
+        Node current = list;
+        Console.Write("Lista: ");
+        while (current != null)
+        {
+            Console.Write(current.Value + " -> ");
+            current = current.Next;
+        }
+        Console.WriteLine("null");
+    }
+}
